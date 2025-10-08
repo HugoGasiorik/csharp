@@ -67,12 +67,46 @@ namespace Cvicenia_polia
                 numbers[i] = int.Parse(input);
                 sum += numbers[i];
             }
-
-            Console.WriteLine("Súčet vsetkych cisel je: " + sum);
             
+            Console.WriteLine("Súčet vsetkych cisel je: " + sum);
             */
 
+            int[] numbers = new int[10];
+
+            Console.WriteLine("Dlzka pola je: " + numbers.Length);
+
+            for (int i = 0; i < numbers.Length; i++)
+            {
+                numbers[i] = i * 10;
+            }
+            int[] numbersNew = new int[11];
+            for (int i = 0; i < numbers.Length; i++)
+            {
+                numbersNew[i] = numbers[i];
+            }
+            numbersNew[10] = 10000;
+            foreach (int i in numbersNew)
+            {
+                Console.WriteLine(i);
+            }
+
+            string[] names = { "janko", "Ferko", "misko" };
+            foreach (string name in names)
+            {
+                Console.WriteLine(name);
+            }
             
+
+
+
+
+
+
+
+
+
+
+
 
         }
     }
