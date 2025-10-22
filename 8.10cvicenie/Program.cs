@@ -3,7 +3,7 @@ using System.Security.Cryptography;
 
 namespace _8._10cvicenie
 {
-    internal class Program
+   internal class Program
     {
         static void Main(string[] args)
         {
@@ -13,9 +13,8 @@ namespace _8._10cvicenie
                 string command = Console.ReadLine();
                 if (command == "ADD")
                 {
-                    string numberTxt = Console.ReadLine();
-                    int number = int.Parse(numberTxt);
-                    numbers.Add(number);
+                    AddNumber(numbers);
+                    break;
                 }
                 else if (command == "END")
                 {
@@ -23,9 +22,10 @@ namespace _8._10cvicenie
                 }
                 else if (command == "DEL")
                 {
-                    string numberTxt = Console.ReadLine();
-                    int number = int.Parse(numberTxt);
-                    numbers.Remove(number);
+                    Console.WriteLine("Ake cislo chcete zmazat");
+                    string
+
+
                 }
                 else if (command == "LIST")
                 {
@@ -89,61 +89,46 @@ namespace _8._10cvicenie
                     int min = numbers.Min();
                     Console.WriteLine(min);
                 }
+            }
+        }
 
                 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-            }
-
-           
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+            public static void AddNumber(List<int> list)
+        {
+            Console.WriteLine("What number do you want to add");
+            string number = Console.ReadLine();
+            int numberint = int.Parse(number);
+            list.Add(numberint);
         }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      }
 
     }
 }

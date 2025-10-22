@@ -56,11 +56,11 @@ namespace Cvicenie_StringMath
 
 
         public static void MoneyCountAverage()
-        {
+        {/*
             int sum = 0;
             foreach (string linee in text.Skip(1))
 
-
+            */
 
 
 
