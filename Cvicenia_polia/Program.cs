@@ -1,11 +1,12 @@
 ﻿using System.Diagnostics.CodeAnalysis;
 
-namespace Cvicenia_polia
+namespace Cvicenia_Polia
 {
     internal class Program
     {
         static void Main(string[] args)
-        {/*
+        {
+            /*
             int[] numbers = new int[7];
 
             numbers[0] = 10;
@@ -15,96 +16,72 @@ namespace Cvicenia_polia
             numbers[4] = 2;
             numbers[5] = 1;
             numbers[6] = 19;
-            /*
-            int sum = 0;
-            for (int i = 0; i < numbers.Length; i++)
-
-            {
-                Console.WriteLine(numbers[i]);
-                sum += numbers[i];
-            }
-            
-            
-                Console.WriteLine(sum);
             */
 
             /*
             int sum = 0;
-            foreach (var number in numbers) 
+            for (int i = 0; i < numbers.Length; i++)
+            {
+                sum += numbers[i];
+            }
+            Console.WriteLine("=" + sum);
+            */
 
+            /*
+            int sum = 0;
+            foreach (var number in numbers)
             {
                 sum += number;
             }
             Console.WriteLine(sum);
             */
 
-            /*
-            int[] numbers = new int[5];
-            for (int i = 0; i < numbers.Length; i++)
 
+            //cyklus pomocou ktoreho naplnime pole cisiel, cez Console.Readline
+            /*
+            Console.WriteLine("Kolko cisiel chcete zadat?:");
+            int r = int.Parse(Console.ReadLine());
+            int[] numbers = new int[r];
+            for (int i = 0; i < r; i++)
             {
-                numbers[i] = 8;
+                Console.WriteLine("Napis cislo, ktore chces scitat:");
+                numbers[i] = int.Parse(Console.ReadLine());
             }
 
             int sum = 0;
-            foreach (var number in numbers)
-            {
-                sum += number;
-                Console.WriteLine(sum);
-            */
-            //Vypisovanie do konzoly 
-            /*
-            Console.WriteLine("KOlko cisel chces?");
-            int count = int.Parse(Console.ReadLine());
-
-
-            int[] numbers = new int[count];
-            int sum = 0;
             for (int i = 0; i < numbers.Length; i++)
             {
-                Console.WriteLine("Zadaj cislo");
-                string input = Console.ReadLine();
-                numbers[i] = int.Parse(input);
+                Console.Write(numbers[i] + " + ");
                 sum += numbers[i];
             }
-            
-            Console.WriteLine("Súčet vsetkych cisel je: " + sum);
+            Console.Write(" = " + sum);
             */
 
+            /*
             int[] numbers = new int[10];
-
-            Console.WriteLine("Dlzka pola je: " + numbers.Length);
 
             for (int i = 0; i < numbers.Length; i++)
             {
                 numbers[i] = i * 10;
             }
+
             int[] numbersNew = new int[11];
             for (int i = 0; i < numbers.Length; i++)
             {
                 numbersNew[i] = numbers[i];
             }
             numbersNew[10] = 10000;
-            foreach (int i in numbersNew)
+            foreach (int number in numbersNew)
             {
-                Console.WriteLine(i);
+                Console.WriteLine(number);
             }
 
-            string[] names = { "janko", "Ferko", "misko" };
+            string[] names = { "Janko", "Fero", "Misko", "Jozef" };
             foreach (string name in names)
             {
                 Console.WriteLine(name);
             }
-            
-
-
-
-
-
-
-
-
-
+            */
 
 
 
