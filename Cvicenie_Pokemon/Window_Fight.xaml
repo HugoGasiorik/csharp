@@ -1,0 +1,47 @@
+﻿<Window x:Class="Cvicenie_Pokemon.Window_Fight"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Cvicenie_Pokemon"
+        mc:Ignorable="d"
+        Title="Window_Fight" Height="450" Width="800">
+    <Grid>
+        <Image Margin="502,30,22,186" Source="/Images/Pikachu.png" Stretch="Fill" RenderTransformOrigin="0.5,0.5">
+            <Image.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform ScaleX="-1"/>
+                    <SkewTransform/>
+                    <RotateTransform/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Image.RenderTransform>
+        </Image>
+        <Image Margin="0,-1,539,171" Source="/Images/Charizard.png" Stretch="Fill" RenderTransformOrigin="0.5,0.5" IsEnabled="False">
+            <Image.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform ScaleY="-1"/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-7740.097"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Image.RenderTransform>
+        </Image>
+        <ProgressBar Name ="ProgressBar_Hero" HorizontalAlignment="Left" Height="30" Margin="67,394,0,0" VerticalAlignment="Top" Width="250"  Value="0"/>
+        <ProgressBar Name ="ProgressBar_Enemy"  HorizontalAlignment="Left" Height="34" Margin="534,350,0,0" VerticalAlignment="Top" Width="212"/>
+        <Button Name="Button_Easy" Content="Light Attack" HorizontalAlignment="Left" Margin="10,311,0,0" VerticalAlignment="Top" Height="33" Width="122" Click="Button_Easy_Click"/>
+        <Button Name="Button_Medium" Content="Medium Attack" HorizontalAlignment="Left" Margin="144,311,0,0" VerticalAlignment="Top" Height="33" Width="101" Click="Button_Medium_Click"/>
+        <Button Name="Button_Masive" Content="Masive attack" HorizontalAlignment="Left" Margin="264,311,0,0" VerticalAlignment="Top" Height="33" Width="118" Click="Button_Masive_Click"/>
+        <Label Name="Label_GameStatus" Content="" HorizontalAlignment="Center" VerticalAlignment="Center" RenderTransformOrigin="0.5,0.5" Height="81" Width="151">
+            <Label.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform ScaleX="-1" ScaleY="-1"/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="0.489"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Label.RenderTransform>
+        </Label>
+        <ProgressBar HorizontalAlignment="Left" Height="25" Margin="71,359,0,0" VerticalAlignment="Top" Width="252"/>
+    </Grid>
+</Window>
