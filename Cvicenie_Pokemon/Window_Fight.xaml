@@ -3,10 +3,11 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:Cvicenie_Pokemon"
         mc:Ignorable="d"
-        Title="Window_Fight" Height="450" Width="800">
+        Title="Pokemon Fight" Height="500" Width="800">
     <Grid>
+
+        <!-- Obrázky -->
         <Image Margin="502,30,22,186" Source="/Images/Pikachu.png" Stretch="Fill" RenderTransformOrigin="0.5,0.5">
             <Image.RenderTransform>
                 <TransformGroup>
@@ -17,7 +18,7 @@
                 </TransformGroup>
             </Image.RenderTransform>
         </Image>
-        <Image Margin="0,-1,539,171" Source="/Images/Charizard.png" Stretch="Fill" RenderTransformOrigin="0.5,0.5" IsEnabled="False">
+        <Image Margin="0,-1,539,171" Source="/Images/Charizard.png" Stretch="Fill" RenderTransformOrigin="0.5,0.5">
             <Image.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform ScaleY="-1"/>
@@ -27,21 +28,37 @@
                 </TransformGroup>
             </Image.RenderTransform>
         </Image>
-        <ProgressBar Name ="ProgressBar_Hero" HorizontalAlignment="Left" Height="30" Margin="67,394,0,0" VerticalAlignment="Top" Width="250"  Value="0"/>
-        <ProgressBar Name ="ProgressBar_Enemy"  HorizontalAlignment="Left" Height="34" Margin="534,350,0,0" VerticalAlignment="Top" Width="212"/>
-        <Button Name="Button_Easy" Content="Light Attack" HorizontalAlignment="Left" Margin="10,311,0,0" VerticalAlignment="Top" Height="33" Width="122" Click="Button_Easy_Click"/>
-        <Button Name="Button_Medium" Content="Medium Attack" HorizontalAlignment="Left" Margin="144,311,0,0" VerticalAlignment="Top" Height="33" Width="101" Click="Button_Medium_Click"/>
-        <Button Name="Button_Masive" Content="Masive attack" HorizontalAlignment="Left" Margin="264,311,0,0" VerticalAlignment="Top" Height="33" Width="118" Click="Button_Masive_Click"/>
-        <Label Name="Label_GameStatus" Content="" HorizontalAlignment="Center" VerticalAlignment="Center" RenderTransformOrigin="0.5,0.5" Height="81" Width="151">
-            <Label.RenderTransform>
-                <TransformGroup>
-                    <ScaleTransform ScaleX="-1" ScaleY="-1"/>
-                    <SkewTransform/>
-                    <RotateTransform Angle="0.489"/>
-                    <TranslateTransform/>
-                </TransformGroup>
-            </Label.RenderTransform>
-        </Label>
-        <ProgressBar HorizontalAlignment="Left" Height="25" Margin="71,359,0,0" VerticalAlignment="Top" Width="252"/>
+
+        <!-- Hero HP -->
+        <Label Content="Hero HP:" HorizontalAlignment="Left" Margin="10,255,0,0" VerticalAlignment="Top"/>
+        <ProgressBar Name="ProgressBar_Hero" HorizontalAlignment="Left" Height="20" Margin="10,278,0,0" VerticalAlignment="Top" Width="250"/>
+        <Label Name="Label_Hero_HP" Content="100 / 100" HorizontalAlignment="Left" Margin="265,275,0,0" VerticalAlignment="Top"/>
+
+        <!-- Hero Energy -->
+        <Label Content="Energy:" HorizontalAlignment="Left" Margin="10,298,0,0" VerticalAlignment="Top"/>
+        <ProgressBar Name="ProgressBar_Energy" HorizontalAlignment="Left" Height="20" Margin="10,320,0,0" VerticalAlignment="Top" Width="250" Foreground="CornflowerBlue"/>
+        <Label Name="Label_Energy" Content="100 / 100" HorizontalAlignment="Left" Margin="265,317,0,0" VerticalAlignment="Top"/>
+
+        <!-- Enemy HP -->
+        <Label Content="Enemy HP:" HorizontalAlignment="Left" Margin="534,255,0,0" VerticalAlignment="Top"/>
+        <ProgressBar Name="ProgressBar_Enemy" HorizontalAlignment="Left" Height="20" Margin="534,278,0,0" VerticalAlignment="Top" Width="212"/>
+        <Label Name="Label_Enemy_HP" Content="100 / 100" HorizontalAlignment="Left" Margin="750,275,0,0" VerticalAlignment="Top"/>
+
+        <!-- Tlačidlá -->
+        <Button Name="Button_Easy" Content="Light Attack (0E)" HorizontalAlignment="Left" Margin="10,355,0,0" VerticalAlignment="Top" Height="33" Width="130" Click="Button_Easy_Click" Background="Yellow"/>
+        <Button Name="Button_Medium" Content="Medium Attack (20E)" HorizontalAlignment="Left" Margin="150,355,0,0" VerticalAlignment="Top" Height="33" Width="130" Click="Button_Medium_Click" Background="Orange"/>
+        <Button Name="Button_Heal" Content="Heal (30E)" HorizontalAlignment="Left" Margin="15,424,0,0" VerticalAlignment="Top" Height="33" Width="90" Click="Button_Heal_Click" Background="LightGreen"/>
+        <Button Name="Button_Restart" Content="Restart" HorizontalAlignment="Center" Margin="0,412,0,0" VerticalAlignment="Top" Height="33" Width="80" Click="Button_Restart_Click" Background="LightCoral"/>
+
+        <!-- Strong Attack s cooldownom -->
+        <Button Name="Button_Strong" Content="Strong Attack (50E)" HorizontalAlignment="Left" Margin="145,424,0,0" VerticalAlignment="Top" Height="33" Width="140" Click="Button_Strong_Click" Background="Red"/>
+        <Label Name="Label_Cooldown" Content="" HorizontalAlignment="Left" Margin="155,395,0,0" VerticalAlignment="Top" Foreground="Black"/>
+
+        <!-- Status -->
+        <Label Name="Label_GameStatus" Content="" HorizontalAlignment="Center" Margin="0,395,0,0" VerticalAlignment="Top" FontSize="18" FontWeight="Bold" Foreground="DarkRed"/>
+
+        <!-- Log -->
+        <Label Name="Label_Log" Content="" HorizontalAlignment="Left" Margin="10,225,0,0" VerticalAlignment="Top" Foreground="DimGray" FontStyle="Italic"/>
+
     </Grid>
 </Window>

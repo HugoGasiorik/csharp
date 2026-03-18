@@ -24,8 +24,8 @@ namespace Cvicenie_Pokemon
         {
             InitializeComponent();
 
-            Hero myHero = new Hero(50, 100, 10);
-            Enemy enemy = new Enemy(200, 1);
+            Hero myHero = new Hero(100, 100, 10);
+            Enemy enemy = new Enemy(200, 20);
 
          
 
