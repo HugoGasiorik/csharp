@@ -7,23 +7,25 @@
         Title="Pokemon Fight" Height="500" Width="800">
     <Grid>
 
-        <!-- Obrázky -->
-        <Image Margin="502,30,22,186" Source="/Images/Pikachu.png" Stretch="Fill" RenderTransformOrigin="0.5,0.5">
-            <Image.RenderTransform>
-                <TransformGroup>
-                    <ScaleTransform ScaleX="-1"/>
-                    <SkewTransform/>
-                    <RotateTransform/>
-                    <TranslateTransform/>
-                </TransformGroup>
-            </Image.RenderTransform>
-        </Image>
-        <Image Margin="0,-1,539,171" Source="/Images/Charizard.png" Stretch="Fill" RenderTransformOrigin="0.5,0.5">
+        <!-- Obrázok hrdinu -->
+        <Image Margin="0,-1,539,206" Source="C:\Users\gasiorikh25\source\repos\CsharpHugo\csharp\Cvicenie_Pokemon\Images\Pikachu.png" Stretch="Fill" RenderTransformOrigin="0.5,0.5">
             <Image.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform ScaleY="-1"/>
                     <SkewTransform/>
                     <RotateTransform Angle="-7740.097"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Image.RenderTransform>
+        </Image>
+
+        <!-- Obrázok nepriateľa (dynamický) -->
+        <Image Name="Image_Enemy" Margin="518,5,6,211" Stretch="Fill" RenderTransformOrigin="0.5,0.5">
+            <Image.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform ScaleX="-1"/>
+                    <SkewTransform/>
+                    <RotateTransform/>
                     <TranslateTransform/>
                 </TransformGroup>
             </Image.RenderTransform>
@@ -39,25 +41,25 @@
         <ProgressBar Name="ProgressBar_Energy" HorizontalAlignment="Left" Height="20" Margin="10,320,0,0" VerticalAlignment="Top" Width="250" Foreground="CornflowerBlue"/>
         <Label Name="Label_Energy" Content="100 / 100" HorizontalAlignment="Left" Margin="265,317,0,0" VerticalAlignment="Top"/>
 
-        <!-- Enemy HP -->
-        <Label Content="Enemy HP:" HorizontalAlignment="Left" Margin="534,255,0,0" VerticalAlignment="Top"/>
+        <!-- Enemy meno + HP -->
+        <Label Name="Label_EnemyName" Content="Enemy" HorizontalAlignment="Left"
+               Margin="534,235,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
+        <Label Content="HP:" HorizontalAlignment="Left" Margin="534,255,0,0" VerticalAlignment="Top"/>
         <ProgressBar Name="ProgressBar_Enemy" HorizontalAlignment="Left" Height="20" Margin="534,278,0,0" VerticalAlignment="Top" Width="212"/>
         <Label Name="Label_Enemy_HP" Content="100 / 100" HorizontalAlignment="Left" Margin="750,275,0,0" VerticalAlignment="Top"/>
 
         <!-- Tlačidlá -->
-        <Button Name="Button_Easy" Content="Light Attack (0E)" HorizontalAlignment="Left" Margin="10,355,0,0" VerticalAlignment="Top" Height="33" Width="130" Click="Button_Easy_Click" Background="Yellow"/>
-        <Button Name="Button_Medium" Content="Medium Attack (20E)" HorizontalAlignment="Left" Margin="150,355,0,0" VerticalAlignment="Top" Height="33" Width="130" Click="Button_Medium_Click" Background="Orange"/>
-        <Button Name="Button_Heal" Content="Heal (30E)" HorizontalAlignment="Left" Margin="15,424,0,0" VerticalAlignment="Top" Height="33" Width="90" Click="Button_Heal_Click" Background="LightGreen"/>
-        <Button Name="Button_Restart" Content="Restart" HorizontalAlignment="Center" Margin="0,412,0,0" VerticalAlignment="Top" Height="33" Width="80" Click="Button_Restart_Click" Background="LightCoral"/>
+        <Button Name="Button_Easy" Content="Light Attack (0E)" HorizontalAlignment="Left" Margin="10,355,0,0" VerticalAlignment="Top" Height="33" Width="130" Click="Button_Easy_Click"/>
+        <Button Name="Button_Medium" Content="Medium Attack (20E)" HorizontalAlignment="Left" Margin="150,355,0,0" VerticalAlignment="Top" Height="33" Width="130" Click="Button_Medium_Click"/>
+        <Button Name="Button_Heal" Content="Heal (30E)" HorizontalAlignment="Left" Margin="290,355,0,0" VerticalAlignment="Top" Height="33" Width="90" Click="Button_Heal_Click" Background="LightGreen"/>
+        <Button Name="Button_Restart" Content="Restart" HorizontalAlignment="Left" Margin="390,355,0,0" VerticalAlignment="Top" Height="33" Width="80" Click="Button_Restart_Click" Background="LightCoral"/>
 
-        <!-- Strong Attack s cooldownom -->
-        <Button Name="Button_Strong" Content="Strong Attack (50E)" HorizontalAlignment="Left" Margin="145,424,0,0" VerticalAlignment="Top" Height="33" Width="140" Click="Button_Strong_Click" Background="Red"/>
-        <Label Name="Label_Cooldown" Content="" HorizontalAlignment="Left" Margin="155,395,0,0" VerticalAlignment="Top" Foreground="Black"/>
+        <!-- Strong Attack -->
+        <Button Name="Button_Strong" Content="Strong Attack (50E)" HorizontalAlignment="Left" Margin="10,395,0,0" VerticalAlignment="Top" Height="33" Width="140" Click="Button_Strong_Click" Background="Orange"/>
+        <Label Name="Label_Cooldown" Content="" HorizontalAlignment="Left" Margin="155,395,0,0" VerticalAlignment="Top" Foreground="Red"/>
 
-        <!-- Status -->
+        <!-- Status + Log -->
         <Label Name="Label_GameStatus" Content="" HorizontalAlignment="Center" Margin="0,395,0,0" VerticalAlignment="Top" FontSize="18" FontWeight="Bold" Foreground="DarkRed"/>
-
-        <!-- Log -->
         <Label Name="Label_Log" Content="" HorizontalAlignment="Left" Margin="10,225,0,0" VerticalAlignment="Top" Foreground="DimGray" FontStyle="Italic"/>
 
     </Grid>

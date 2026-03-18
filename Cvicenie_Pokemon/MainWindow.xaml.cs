@@ -1,81 +1,41 @@
-﻿using System.Reflection;
-using System.Text;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
-using Cvicenie_Pokemon;
+﻿using System.Windows;
 
 namespace Cvicenie_Pokemon
 {
-    /// <summary>
-    /// Interaction logic for MainWindow.xaml
-    /// </summary>
     public partial class MainWindow : Window
     {
-        private object Textbox_MyValue;
-
         public MainWindow()
         {
             InitializeComponent();
-
-            Hero myHero = new Hero(100, 100, 10);
-            Enemy enemy = new Enemy(200, 20);
-
-         
-
-
-
-
-
-
-
-
-
-
-
-
-            Window_Fight window_Fight = new Window_Fight(myHero, enemy);
-            window_Fight.Show();
-
         }
 
-        public void Button_Click(object sender, RoutedEventArgs e)
+        private void StartFight(Enemy enemy)
         {
-
-           
-           
-
-/*
-            window_Fight.ShowDialog();
-
-            string myTextBoxValue = Textbox_MyValue.Text;
-                  
-            string myTextBoxValue = TextBox_MyValue.Text;
-
-            Window_Fight window_Fight = new Window_Fight(myTextBoxValue);
-            window_Fight.Show();
-
-
-            Button myButton = (Button)sender;
-            myButton.IsEnabled = false;
-            myButton.Content = "Uz bolo stlacene";*/
-
-
-
+            Hero hero = new Hero(100, 100, 10, 100);
+            Window_Fight fightWindow = new Window_Fight(hero, enemy);
+            fightWindow.Show();
+            this.Close();
         }
 
-        private void TextBox_MyValue_TextChanged(object sender, TextChangedEventArgs e)
+        private void Button_Charmander_Click(object sender, RoutedEventArgs e)
         {
+            Enemy charmander = new Enemy("Charmander", 60, 8,
+                @"C:\Users\gasiorikh25\source\repos\CsharpHugo\csharp\Cvicenie_Pokemon\Images\Snímka obrazovky 2026-03-18 67.png");
+            StartFight(charmander);
+        }
 
+        private void Button_Charmeleon_Click(object sender, RoutedEventArgs e)
+        {
+            Enemy charmeleon = new Enemy("Charmeleon", 100, 15,
+                @"C:\Users\gasiorikh25\source\repos\CsharpHugo\csharp\Cvicenie_Pokemon\Images\Snímka obrazovky 2026-03-18 69.png");
+            StartFight(charmeleon);
+        }
+
+        private void Button_Charizard_Click(object sender, RoutedEventArgs e)
+        {
+            Enemy charizard = new Enemy("Charizard", 150, 25,
+                @"C:\Users\gasiorikh25\source\repos\CsharpHugo\csharp\Cvicenie_Pokemon\Images\Charizard.png");
+            StartFight(charizard);
         }
     }
 }
-
-
-
